@@ -1,0 +1,155 @@
+.container {
+    width: 500px;
+    height: 800px;
+    background-color: black;
+    position: relative;
+    overflow: hidden;
+    color: rgb(255, 255, 0);
+}
+
+div.logo {
+    width: 50%;
+    position: absolute;
+    left: 30%;
+}
+
+div.credits {
+    width: 5%;
+    position: absolute;
+    left: 40%;
+    bottom: 2%;
+    display: flex;
+    align-items: center;
+}
+
+span {
+    padding: 0 5px;
+}
+
+div.deathstar {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 40%;
+    left: 70%;
+    background-image: url(assets/end_deathstar.svg);
+}
+
+div.player_ship {
+    width: 150px;
+    height: 50px;
+    position: absolute;
+    top: 70%;
+    left: -20%;
+    transform: rotateZ(-15deg);
+    animation: flight1 4s ease-in-out 1;
+}
+
+img.player {
+    width: 30%;
+}
+
+div.enemy_ship {
+    width: 150px;
+    height: 50px;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: rotateZ(100deg);
+    animation: flight2 10s ease;
+}
+
+img.enemy {
+    width: 30%;
+}
+
+div.misslies1,
+div.misslies2 {
+    height: 80%;
+    border-top: 3px dashed blue;
+    border-bottom: 3px dashed blue;
+    position: absolute;
+    left: 35%;
+    top: 0;
+    animation: shoot .5s ease 3;
+}
+
+div.misslies2 {
+    border-top: 3px dashed green;
+    border-bottom: 3px dashed green;
+    height: 100%;
+}
+
+@keyframes flight1 {
+    0% {
+        top: 70%;
+        left: 0;
+    }
+    50% {
+        top: 45%;
+        left: 30%;
+        transform: rotateZ(-90deg);
+    }
+    100% {
+        top: 20%;
+        left: -20%;
+        transform: rotateZ(-180deg);
+    }
+}
+
+@keyframes flight2 {
+    0% {
+        top: 30%;
+        left: 50%;
+    }
+    100% {
+        top: 70%;
+        left: -30%;
+        transform: rotateZ(180deg);
+    }
+}
+
+@keyframes explosion {
+    0% {
+        background-image: url(assets/explosion1.svg);
+    }
+    10% {
+        background-image: url(assets/explosion1.svg);
+    }
+    20% {
+        background-image: url(assets/explosion2.svg);
+    }
+    30% {
+        background-image: url(assets/explosion3.svg);
+    }
+    40% {
+        background-image: url(assets/explosion4.svg);
+    }
+    50% {
+        background-image: url(assets/explosion5.svg);
+    }
+    60% {
+        background-image: url(assets/explosion6.svg);
+    }
+    70% {
+        background-image: url(assets/explosion7.svg);
+    }
+    80% {
+        background-image: url(assets/explosion8.svg);
+    }
+    90% {
+        background-image: url(assets/explosion9.svg);
+    }
+    100% {
+        background-image: url(assets/explosion9.svg);
+    }
+}
+
+@keyframes shoot {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 65%;
+    }
+}
